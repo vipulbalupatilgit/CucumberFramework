@@ -1,51 +1,22 @@
-#Author: your.email@your.domain.com
-#Keywords Summary :
-#Feature: List of scenarios.
-#Scenario: Business rule through list of steps with arguments.
-#Given: Some precondition step
-#When: Some key actions
-#Then: To observe outcomes or validation
-#And,But: To enumerate more Given,When,Then steps
-#Scenario Outline: List of steps for data-driven as an Examples and <placeholder>
-#Examples: Container for s table
-#Background: List of steps run before each of the scenarios
-#""" (Doc Strings)
-#| (Data Tables)
-#@ (Tags/Labels):To group Scenarios
-#<> (placeholder)
-#""
-## (Comments)
-#Sample Feature Definition Template
-#@tag
-#Feature: Title of your feature
-  #I want to use this template for my feature file
-#
-  #@tag1
-  #Scenario: Title of your scenario
-    #Given I want to write a step with precondition
-    #And some other precondition
-    #When I complete action
-    #And some other action
-    #And yet another action
-    #Then I validate the outcomes
-    #And check more outcomes
-#
-  #@tag2
-  #Scenario Outline: Title of your scenario outline
-    #Given I want to write a step with <name>
-    #When I check for the <value> in step
-    #Then I verify the <status> in step
-#
-    #Examples: 
-      #| name  | value | status  |
-      #| name1 |     5 | success |
-      #| name2 |     7 | Fail    |
-      
-   @Smoke    
-   Feature: Login functionality
-    Scenario: Successful login with valid credentials
-    Given the user is on the login page
-    When the user enters a valid username and password
-    And clicks on the login button
-    Then the user should be redirected to the home page
-    And a welcome message should be displayed
+@login
+Feature: Login to OpenCart
+
+  Background:
+    Given the user is on the OpenCart homepage
+
+  @positive
+  Scenario: Login with valid credentials (from config)
+    When the user navigates to the Login page
+    And the user logs in with valid credentials from config
+    Then the user should see they are logged in
+
+  @negative
+  Scenario Outline: Login with invalid credentials
+    When the user navigates to the Login page
+    And the user logs in with email "<email>" and password "<password>"
+    Then the user should see a login error
+
+    Examples:
+      | email               | password  |
+      | wrong@example.com   | wrongpass |
+      | invalid@example.com | 123456    |

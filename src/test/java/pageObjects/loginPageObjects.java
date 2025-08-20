@@ -10,9 +10,9 @@ public class loginPageObjects  {
     public  final By LOGOUT_LINK       = By.xpath("//a[contains(@href,'route=account/logout')]");
 
     // Login page
-    public   final By EMAIL_INPUT    = By.xpath("//input[@id='input-email' or @name='email']");
-    public   final By PASSWORD_INPUT = By.xpath("//input[@id='input-password' or @name='password']");
-    public   final By LOGIN_BUTTON   = By.xpath("//input[@value='Login'] | //button[normalize-space()='Login']");
+    public   final By EMAIL_INPUT    = By.xpath("//input[@id='input-email']");
+    public   final By PASSWORD_INPUT = By.xpath("//input[@id='input-password']");
+    public   final By LOGIN_BUTTON   = By.xpath("//input[@value='Login']");
 
     // Post-login / account landing
     public   final By ACCOUNT_BREADCRUMB  = By.xpath("//ul[@class='breadcrumb']//a[contains(@href,'route=account/account')]");

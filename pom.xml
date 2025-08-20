@@ -101,9 +101,23 @@
 			<artifactId>commons-lang3</artifactId>
 			<version>3.12.0</version>
 		</dependency>
-		<!--
-		https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber7-adapter/1.14.0 
--->
+		
+		<!-- Cucumber TestNG -->
+    <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-testng</artifactId>
+        <version>7.15.0</version>
+    </dependency>
+
+    <!-- TestNG -->
+    <dependency>
+        <groupId>org.testng</groupId>
+        <artifactId>testng</artifactId>
+        <version>7.10.2</version>
+        <scope>test</scope>
+    </dependency>
+		
+		<!--https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber7-adapter/1.14.0 -->
 		<dependency>
 			<groupId>tech.grasshopper</groupId>
 			<artifactId>extentreports-cucumber7-adapter</artifactId>

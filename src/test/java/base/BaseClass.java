@@ -19,11 +19,7 @@ import org.openqa.selenium.safari.SafariDriver;
 
 import pageObjects.BasePage;
 
-public class BaseClass extends BasePage{
-
-	public BaseClass(WebDriver driver) {
-		super(driver);
-	}
+public class BaseClass {
 
 	static WebDriver driver;
 	static Properties p;
@@ -101,7 +97,7 @@ public class BaseClass extends BasePage{
 	}
 
 	public static Properties getProperties() throws IOException {
-		FileReader file = new FileReader(System.getProperty("user.dir") + "\\src\\test\\resources\\config.properties");
+		FileReader file = new FileReader(System.getProperty("user.dir") + "/src/test/resources/config.properties");
 		p = new Properties();
 		p.load(file);
 		return p;
