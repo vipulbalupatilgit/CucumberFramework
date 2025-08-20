@@ -12,6 +12,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.cucumber.utilities.DriverActions;
+
 import base.BaseClass;
 import pageObjects.loginPageObjects;
 
@@ -28,6 +30,8 @@ public class loginPageActions extends CommonPageActions{
 //    }
     loginPageObjects LoginPageObjects=new loginPageObjects(); 
     CommonPageActions commonPageActions= new CommonPageActions();
+//	private DriverActions driverActions=new DriverActions();
+
 //
 //    private Properties loadProps() {
 //        try {
